@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-//use App\Events\NewMessageSent;
+use App\Events\NewMessageSent;
 use App\Http\Requests\GetMessageRequest;
 use App\Http\Requests\StoreMessageRequest;
 use App\Models\Chat;
@@ -65,7 +65,7 @@ class ChatMessageController extends Controller{
     private function sendNotificationToOther(ChatMessage $chatMessage) : void {
 
         // TODO move this event broadcast to observer
-        /*broadcast(new NewMessageSent($chatMessage))->toOthers();
+        broadcast(new NewMessageSent($chatMessage))->toOthers();
 
         $user = auth()->user();
         $userId = $user->id;
@@ -87,7 +87,7 @@ class ChatMessageController extends Controller{
                 ]
             ]);
 
-        }*/
+        }
 
     }
 }
